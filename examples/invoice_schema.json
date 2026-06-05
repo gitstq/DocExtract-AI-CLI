@@ -1,0 +1,73 @@
+{
+  "name": "Invoice",
+  "description": "Standard invoice document extraction",
+  "fields": [
+    {
+      "name": "invoice_number",
+      "type": "string",
+      "description": "Invoice identifier",
+      "required": true
+    },
+    {
+      "name": "issue_date",
+      "type": "date",
+      "description": "Invoice issue date",
+      "required": true
+    },
+    {
+      "name": "due_date",
+      "type": "date",
+      "description": "Payment due date",
+      "required": false
+    },
+    {
+      "name": "vendor_name",
+      "type": "string",
+      "description": "Company issuing the invoice",
+      "required": true
+    },
+    {
+      "name": "customer_name",
+      "type": "string",
+      "description": "Customer name",
+      "required": true
+    },
+    {
+      "name": "total_amount",
+      "type": "currency",
+      "description": "Total amount due",
+      "required": true
+    },
+    {
+      "name": "line_items",
+      "type": "list",
+      "description": "List of line items",
+      "required": true,
+      "item_type": "object",
+      "nested_schema": {
+        "name": "LineItem",
+        "description": "",
+        "fields": [
+          {
+            "name": "description",
+            "type": "string",
+            "description": "Item description",
+            "required": true
+          },
+          {
+            "name": "quantity",
+            "type": "float",
+            "description": "Quantity",
+            "required": true
+          },
+          {
+            "name": "unit_price",
+            "type": "currency",
+            "description": "Price per unit",
+            "required": true
+          }
+        ]
+      }
+    }
+  ]
+}

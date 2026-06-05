@@ -1,0 +1,77 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docextract-ai-cli"
+version = "1.0.0"
+description = "🦞 Lightweight Terminal AI Intelligent Document Structured Extraction Engine"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "gitstq", email = "gitstq@example.com"}
+]
+keywords = [
+    "ai", "document-extraction", "structured-data", "ocr-alternative",
+    "cli-tool", "pdf-extraction", "invoice-extraction", "resume-parser",
+    "zero-dependencies", "llm", "openai", "ollama", "gemini"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "flake8>=6.0",
+    "mypy>=1.0",
+]
+
+[project.scripts]
+docextract = "docextract.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/gitstq/DocExtract-AI-CLI"
+Documentation = "https://github.com/gitstq/DocExtract-AI-CLI#readme"
+Repository = "https://github.com/gitstq/DocExtract-AI-CLI"
+Issues = "https://github.com/gitstq/DocExtract-AI-CLI/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+docextract = ["schemas/*.json"]
+
+[tool.black]
+line-length = 120
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"

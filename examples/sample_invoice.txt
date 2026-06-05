@@ -1,0 +1,27 @@
+INVOICE
+
+Invoice Number: INV-2024-00123
+Date: 2024-03-15
+Due Date: 2024-04-15
+
+From:
+Acme Corporation
+123 Business Street
+New York, NY 10001
+
+To:
+John Smith
+456 Customer Avenue
+Los Angeles, CA 90001
+
+Line Items:
+1. Professional Services - 40 hours @ $150.00/hr = $6,000.00
+2. Software License (Annual) - 1 @ $1,200.00 = $1,200.00
+3. Support Package - 1 @ $800.00 = $800.00
+
+Subtotal: $8,000.00
+Tax (8%): $640.00
+Total Amount Due: $8,640.00
+
+Payment Terms: Net 30
+Thank you for your business!
