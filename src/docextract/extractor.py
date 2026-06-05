@@ -150,11 +150,11 @@ class DocumentExtractor:
         text_parts = []
         # Find all text streams
         stream_pattern = re.compile(b"stream\r?\n(.*?)(?:\r?\n)?endstream", re.DOTALL)
-        xref_pattern = re.compile(b"xref\s*\n.*?\n?trailer", re.DOTALL)
+        xref_pattern = re.compile(br"xref\s*\n.*?\n?trailer", re.DOTALL)
 
         # Try to extract text from content streams
         # Look for BT...ET blocks (Begin/End Text)
-        bt_pattern = re.compile(b"BT\s*(.*?)\s*ET", re.DOTALL)
+        bt_pattern = re.compile(br"BT\s*(.*?)\s*ET", re.DOTALL)
 
         for match in bt_pattern.finditer(content):
             stream = match.group(1)
